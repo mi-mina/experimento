@@ -41,6 +41,9 @@ npm install --global browserify
 //Para convertir un fichero js (con require's) a uno con todos los modules dentro:
 browserify app.js > index.js
 
-//Se suele poner esto dentro de package.json como un script para automatizar el proceso:
+//Se suele poner esto dentro de package.json dentro de "scripts" para automatizar el proceso:
+"build": "browserify app.js > index.js"
+
+//Y luego, desde la consola:
 npm run build
 ```
