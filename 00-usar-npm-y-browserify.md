@@ -28,9 +28,10 @@ Hay dos tipos de librerías que vamos a usar:
 ## browserify
 
 require('modules') in the browser
-browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag.
+browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single ```<script>``` tag.
 
 ```
+//Para instalarlo
 npm install --global browserify
 ```
 
