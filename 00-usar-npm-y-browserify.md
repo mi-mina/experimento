@@ -31,17 +31,12 @@ require('modules') in the browser
 browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single ```<script>``` tag.
 
 ```
-//Para instalarlo
+//Para instalarlo.
 npm install --global browserify
-```
 
-Convertir un fichero js con require's a uno con todo dentro:
-```
+//Para convertir un fichero js (con require's) a uno con todos los modules dentro:
 browserify app.js > index.js
-```
 
-Esto se suele poner dentro de package.json como un script:
-
-```
+//Se suepe poner esto dentro de package.json como un script para automatizar el proceso:
 npm run build
 ```
