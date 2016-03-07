@@ -1,4 +1,6 @@
-# Usar npm y browserify
+# Usar npm y browseriy
+
+https://www.npmjs.com/
 
 npm (node package manager) makes it easy for JavaScript developers to share and reuse code.
 These bits of reusable code are called packages, or sometimes modules.
@@ -27,6 +29,8 @@ Hay dos tipos de librerías que vamos a usar:
 
 ## browserify
 
+https://www.npmjs.com/package/browserify
+
 require('modules') in the browser
 browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single ```<script>``` tag.
 
@@ -37,6 +41,6 @@ npm install --global browserify
 //Para convertir un fichero js (con require's) a uno con todos los modules dentro:
 browserify app.js > index.js
 
-//Se suepe poner esto dentro de package.json como un script para automatizar el proceso:
+//Se suele poner esto dentro de package.json como un script para automatizar el proceso:
 npm run build
 ```
