@@ -1,29 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var d3 = require('d3');
-var diHola = require('./client/hola.js');
-var diAdios = require('./client/adios.js');
-
-diHola('Espe');
-diAdios('Espe');
+var createContainer = require('./client/createContainer.js');
 
 var r = 30;
 var width = 600,
     height = 600;
-
 var x = width / r - 1,
     y = height / r;
-
 var h = 120;
-
-// var data = d3.range(40).map(function() { return [(Math.random() * (width - 2 * r)) + r,
-//   (Math.random() * (height - 2 * r)) + r]; });
-
-// var color = d3.scale.category20b();
 
 d3.select("body") //Con select, seleccionamos el primer elemento de tipo body
   .append("svg") //Le añadimos un elemento de tipo svg
     .attr("width", width) //Al elemento svg, le añadimos el atributo width
     .attr("height", height) //y height
+    .attr("id", "svg1")
   .selectAll("circle") //Seleccionamos todos los elementos de tipo circle dentro de svg (de momento ninguno)
     .data(d3.range(x * y)) //A cada elemento le vinculamos unos datos (data tiene que ser un array de datos)
   .enter().append("circle") //con enter().append("circle") añadimos circulos hasta que cada data tenga asociado uno
@@ -32,7 +22,6 @@ d3.select("body") //Con select, seleccionamos el primer elemento de tipo body
     .style("fill", function(d, i) { return d3.hsl(d += i*4 , 0.8, 0.8) })//además de d, podemos usar i, el index de ese dato
     .style("fill-opacity", 0.7)
     .on("mouseover", mouseover);
-
 
 function mouseover(d) {
   d3.select(this)
@@ -43,29 +32,27 @@ function mouseover(d) {
       .delay(800)
       .duration(1000)
       .attr("r", r);
-
 }
 
+createContainer();
 
-// circle.style("fill", function(){return d3.hsl(h += 20 , 0.8, 0.8)});
+},{"./client/createContainer.js":2,"d3":3}],2:[function(require,module,exports){
 
-},{"./client/adios.js":2,"./client/hola.js":3,"d3":4}],2:[function(require,module,exports){
 
-function blahblah() {
-    console.log('blah');
-}
 
-module.exports = function diAdios (name) {
-  blahblah();
-  console.log('Adiós ' + name);
+
+
+
+module.exports = function createContainer() {
+  var theBody = document.getElementsByTagName("body")[0];
+  var newDiv = document.createElement("div");
+  var svg = document.getElementById("svg1");
+  newDiv.appendChild(svg);
+  theBody.appendChild(newDiv);
+  newDiv.setAttribute("class", "mainContent");
 }
 
 },{}],3:[function(require,module,exports){
-module.exports = function diHola (name) {
-  console.log('Hola ' + name);
-}
-
-},{}],4:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.16"
