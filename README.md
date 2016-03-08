@@ -1,5 +1,11 @@
 # Experimentos
 
+Cosas que molaría probar:
+
+- docco: jashkenas.github.com/docco/
+- browserify con babel:
+- react
+
 
 #### 0. Usar npm y browserify
 
