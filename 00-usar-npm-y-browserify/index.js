@@ -20,7 +20,7 @@ d3.select("body") //Con select, seleccionamos el primer elemento de tipo body
     .style("transform", function(d) { return "translate(" + ((d % x) * r + r) + "px, " + ((Math.floor(d / x) * 3 * r) + r) + "px)";}) //d es el dato vinculado con cada circulo
     .attr("r", r)
     .style("fill", function(d, i) { return d3.hsl(d += i*4 , 0.8, 0.8) })//además de d, podemos usar i, el index de ese dato
-    .style("fill-opacity", 0.7)
+    .style("fill-opacity", 0.6)
     .on("mouseover", mouseover);
 
 function mouseover(d) {
