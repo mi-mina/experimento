@@ -135,6 +135,13 @@ a:hover {
   }
 }
 
+.center{
+  text-align: center;
+}
+.main-content {
+  /*border: 1px solid black;*/
+}
+
 .main-content :first-child {
   margin-top: 0; }
 .main-content img {
