@@ -7,7 +7,7 @@ Cosas que molaría probar:
 - react
 
 
-#### 0. Usar npm y browserify
+#### 1. Usar npm y browserify
 
 Objetivos:
 
@@ -21,7 +21,7 @@ Extras:
 - Añadir un comando npm para crear el fichero javascript (`npm run build`)
 - Usar watchify para generar el fichero automáticamente cuando se modifique los contenidos. Añadir otro comando que en vez de browserify use watchify (`npm run watch`)
 
-#### 1. Generar html utilizando virtual dom
+#### 2. Generar html utilizando virtual dom
 
 La idea es cargar un fichero json con la información de los _clips de audio_ y mostrar la carátula y su información en la página web.
 
@@ -32,4 +32,4 @@ Objetivos:
  - Generar el html dom dinámicamente a partir de un fichero .json utilizando técnicas funcionales y la librería [hyperscript](https://www.npmjs.com/package/hyperscript)
 
 
-#### 2. Animaciones sin necesidad de librerías
+#### 3. Animaciones sin necesidad de librerías
