@@ -48,10 +48,13 @@ En resúmen:
 - Pillamos el json mediante FetchAPI
 - Le pasamos esos datos a una función que deberá generar un dom-virtual utilizando hyperscript
 - Como hyperscript no hace diff (que es básicamente lo que hace react y https://github.com/Matt-Esch/virtual-dom), lo que vamos a hacer es algo así como:
-- 
+
+ 
 ```js
-document.body.innerHTML = generateVirtualDOM(data).outerHTML
+document.body.innerHTML = renderPage(data).outerHTML
 ```
+
+... donde `renderPage` es nuestra función que acepta los datos y devuelve un árbol dom virtual.
 
 
 
