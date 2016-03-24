@@ -8,7 +8,7 @@ Cosas que molaría probar:
 
 
 #### 1. Usar npm y browserify
-
+[resultado](http://mi-mina.github.io/experimento/)
 Objetivos:
 
 - entender npm, `package.json` y cómo se instalan dependencias
