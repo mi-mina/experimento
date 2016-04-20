@@ -15,7 +15,7 @@ body {
   color: #606c71;
 }
 a {
-  color: #319390;
+  color: #42e3e3;
   text-decoration: none;
 }
 a:hover {
@@ -159,6 +159,9 @@ a:hover {
   color: #3BA7B0; }
 .main-content p {
   margin-bottom: 1em; }
+.main-content a {
+  color: #3BA7B0;
+}
 .main-content code {
   padding: 2px 4px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
