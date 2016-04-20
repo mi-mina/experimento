@@ -1,56 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
-var h = require('hyperscript')
-
-document.body.appendChild(
-  h('section.page-header',
-    h('h1.project-name', "Experimento #2"),
-    h('h2.project-tagline', 'Generar html utilizando virtual DOM'),
-    h("a.btn", {href: "https://github.com/mi-mina/experimento"}, "View on GitHub"),
-    h("a.btn", {href: "https://github.com/mi-mina/experimento/archive/master.zip"}, "Download .zip"))
-  )
-
-document.body.appendChild(
-  h("section#main.main-content")
-)
-
-var nombreArchivos = [];
-var misImagenes = [];
-function getNombreArchivo (cancion, i, array){
-  nombreArchivos[i] = array[i].nombreArchivo;
-}
-function añadeJPG (nombre){
-  return String(nombre + ".jpg");
-}
-
-fetch('info.json')
-  .then(function(response) {
-    return response.json()
-  }).then(function(json) {
-    console.log("pasando por 1", json);
-    json.forEach(getNombreArchivo);
-    misImagenes = nombreArchivos.map(añadeJPG);
-    console.log("pasando por 2", nombreArchivos);
-    console.log("pasando por 3", misImagenes.length);
-    for(var i = 0; i < misImagenes.length; i++){
-      document.getElementById('main').appendChild(
-        h("img#img"+i, {src: ""})   )
-    }
-  }).then();
-
-for(var i = 0; i < 8; i++){
-fetch("musiquetriangle03.jpg").then(function(response) {
-    response.blob().then(function(myBlob) {
-      var objectURL = URL.createObjectURL(myBlob);
-      console.log("pasando por 4", misImagenes.length);
-      var myImage = document.getElementById('img'+i);
-      myImage.src = objectURL;
-    });
-  });
-}
-
-},{"hyperscript":3}],3:[function(require,module,exports){
 var split = require('browser-split')
 var ClassList = require('class-list')
 require('html-element')
@@ -201,7 +151,7 @@ function isArray (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]'
 }
 
-},{"browser-split":4,"class-list":5,"html-element":1}],4:[function(require,module,exports){
+},{"browser-split":3,"class-list":4,"html-element":1}],3:[function(require,module,exports){
 /*!
  * Cross-Browser Split 1.1.1
  * Copyright 2007-2012 Steven Levithan <stevenlevithan.com>
@@ -309,7 +259,7 @@ module.exports = (function split(undef) {
   return self;
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 // contains, add, remove, toggle
 var indexof = require('indexof')
 
@@ -410,7 +360,7 @@ function isTruthy(value) {
     return !!value
 }
 
-},{"indexof":6}],6:[function(require,module,exports){
+},{"indexof":5}],5:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -421,4 +371,38 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}]},{},[2]);
+},{}],6:[function(require,module,exports){
+var h = require('hyperscript');
+
+document.body.appendChild(
+  h('section.page-header',
+    h('h1.project-name', "Experimento #2"),
+    h('h2.project-tagline', 'Generar html utilizando virtual DOM'),
+    h("a.btn", {href: "https://github.com/mi-mina/experimento"}, "View on GitHub"),
+    h("a.btn", {href: "https://github.com/mi-mina/experimento/archive/master.zip"}, "Download .zip"))
+  );
+
+document.body.appendChild(
+  h("section#main.main-content")
+);
+
+fetch('public/info.json')
+  .then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    for(var i = 0; i < json.length; i++){
+      document.getElementById('main').appendChild(
+        h("div.media",
+          h("div.media-left.media-middle",
+            h("img#img.media-object.img-thumbnail"+i, {src: "public/images/"+json[i].nombreArchivo+".jpg"})),
+          h("div.media-body",
+            h("h2.media-heading", json[i].titulo),
+            h("p", "Album: "+json[i].album),
+            h("p", "Artista: "+json[i].artista),
+            h("p", "Lugar: "+json[i].lugar),
+            h("p", "Fecha: "+json[i].fecha)))
+      )
+    }
+  });
+
+},{"hyperscript":2}]},{},[6]);
