@@ -1,4 +1,4 @@
-# Experimentos
+# [Experimentos](http://mi-mina.github.io/experimento/)
 
 Cosas que molaría probar:
 
@@ -7,8 +7,7 @@ Cosas que molaría probar:
 - react
 
 
-#### 1. Usar npm y browserify
-[resultado](http://mi-mina.github.io/experimento/)
+#### 1. [Usar npm y browserify](http://mi-mina.github.io/experimento/01/index-01.html)
 
 Objetivos:
 
@@ -22,7 +21,7 @@ Extras:
 - Añadir un comando npm para crear el fichero javascript (`npm run build`)
 - Usar watchify para generar el fichero automáticamente cuando se modifique los contenidos. Añadir otro comando que en vez de browserify use watchify (`npm run watch`)
 
-#### 2. Generar html utilizando virtual dom
+#### 2. [Generar html utilizando virtual dom](http://mi-mina.github.io/experimento/02/index-02.html)
 
 La idea es cargar un fichero json con la información de los _clips de audio_ y mostrar la carátula y su información en la página web.
 
@@ -50,7 +49,7 @@ En resúmen:
 - Le pasamos esos datos a una función que deberá generar un dom-virtual utilizando hyperscript
 - Como hyperscript no hace diff (que es básicamente lo que hace react y https://github.com/Matt-Esch/virtual-dom), lo que vamos a hacer es algo así como:
 
- 
+
 ```js
 document.body.innerHTML = renderPage(data).outerHTML
 ```
@@ -70,4 +69,3 @@ Para animar con la técnica de los "dos relojes" (imprescindible cuando se hacen
 - Existe una estructura de datos. En nuestro caso será un HashMap con el tempo, beat actual y lo que necesitemos para generar el dibujo
 - Mediante setTimeOut modificaremos la estructura de datos, __pero no dibujaremos nada__
 - Mediante requestAnimationFrame dibujaremos lo que haya en la estructura de datos, __pero no calcularemos nada__. Es decir, todos los cálculos necesarios para hacer el dibujo se hará en la función de `setTimeOut` y lo que sea transformar esos datos en dibujo lo haremos en la función de `requestAnimationFrame`
-
