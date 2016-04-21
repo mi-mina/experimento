@@ -1,12 +1,8 @@
 {
-  "name": "02-virtual-dom",
+  "name": "03",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "hyperscript": "^1.4.7"
-  },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify scripts/app.js > scripts/index.js",

@@ -21,7 +21,7 @@ Extras:
 - Añadir un comando npm para crear el fichero javascript (`npm run build`)
 - Usar watchify para generar el fichero automáticamente cuando se modifique los contenidos. Añadir otro comando que en vez de browserify use watchify (`npm run watch`)
 
-#### 2. [Generar html utilizando virtual dom](http://mi-mina.github.io/experimento/02/index-02.html)
+#### 2. [No sé qué titulo ponerle a esto](http://mi-mina.github.io/experimento/02/index-02.html)
 
 La idea es cargar un fichero json con la información de los _clips de audio_ y mostrar la carátula y su información en la página web.
 
@@ -38,7 +38,7 @@ Fetch API es una versión mejorada de XMLHTTPRequest. A nivel de uso, la mayor d
 Virtual-DOM: Gracias a React, está de moda generar html dinámicamente utilizando técnicas funcionales y una cosa que se llama virtual-dom. En general la idea es como sigue: existe una estructura de datos (en el ejemplo, tu .json) y una función se encarga de convertir esa estructura de datos en un árbol dom-virtual (es decir, una representación del DOM). Después se compara el dom-virtual con el dom real (el que se ve en la página) y se modifica el dom real para que sea igual que el virtual. Cuando los datos cambian (por ejemplo, se añade un nuevo _clip_) se repite el proceso.
 
 React: https://facebook.github.io/react/index.html
-Rect virtual-dom: https://facebook.github.io/react/docs/glossary.html
+React virtual-dom: https://facebook.github.io/react/docs/glossary.html
 Otra librería que implementa virtual-dom: https://github.com/Matt-Esch/virtual-dom
 
 Para generar el virtual-dom se utiliza, generalmente JSX (https://facebook.github.io/react/docs/jsx-in-depth.html) pero, para entender mejor el proceso, de momento vamos a utilizar hyperscript (https://github.com/dominictarr/hyperscript)
@@ -56,9 +56,11 @@ document.body.innerHTML = renderPage(data).outerHTML
 
 ... donde `renderPage` es nuestra función que acepta los datos y devuelve un árbol dom virtual.
 
+#### 3. Generar html utilizando virtual dom
 
+Esto va a ser otra versión del experimento 2, pero usando [virtual-dom](https://github.com/Matt-Esch/virtual-dom). Como no tengo claro lo que estoy haciendo lo dejo así de momento. Luego tendré que redefinir mejor el punto anterior y este. 
 
-#### 3. Animaciones sin necesidad de librerías
+#### 4. Animaciones sin necesidad de librerías
 
 La idea es utilizar `requestAnimationFrame` por un lado para dibujar en el canvas, y luego emplear la técnica de "dos relojes" para crear animaciones.
 
