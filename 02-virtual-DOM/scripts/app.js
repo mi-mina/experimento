@@ -2,7 +2,7 @@ var h = require('hyperscript');
 
 document.body.appendChild(
   h('section.page-header',
-    h('h1.project-name', "Experimento #2.1"),
+    h('h1.project-name', "Experimento #2"),
     h('h2.project-tagline', 'Generar html utilizando virtual DOM'),
     h("a.button", {href: "https://github.com/mi-mina/experimento"}, "View on GitHub"),
     h("a.button", {href: "https://github.com/mi-mina/experimento/archive/master.zip"}, "Download .zip"))
