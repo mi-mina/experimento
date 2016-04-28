@@ -382,7 +382,7 @@ function renderPage(json){
           h("a.button", {href: "https://github.com/mi-mina/experimento/archive/master.zip"}, "Download .zip")),
           h("section#main.main-content",
             h("div",
-              h("button.toogle.btn.btn-info.btn-lg", "Show/Hide Info")),
+              h("button.toggle.btn.btn-info.btn-lg", "Show/Hide Info")),
             h("article#albums",
               Object.keys(json).map(
                 function(album){
@@ -402,7 +402,7 @@ function renderPage(json){
        ;
 };
 
-var toogle;
+var toggle;
 var noDetails = false;
 
 fetch('public/info.json')
@@ -411,8 +411,8 @@ fetch('public/info.json')
       }).then(function(data){
         console.log(data);
         document.body.innerHTML = renderPage(data).outerHTML;
-        toogle = document.querySelector('.toogle');
-        toogle.onclick = function () {
+        toggle = document.querySelector('.toggle');
+        toggle.onclick = function () {
           noDetails = !noDetails;
           var items = document.getElementsByTagName("ul");
 

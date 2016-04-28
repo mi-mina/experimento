@@ -21,7 +21,7 @@ Extras:
 - Añadir un comando npm para crear el fichero javascript (`npm run build`)
 - Usar watchify para generar el fichero automáticamente cuando se modifique los contenidos. Añadir otro comando que en vez de browserify use watchify (`npm run watch`)
 
-#### 2. [No sé qué titulo ponerle a esto](http://mi-mina.github.io/experimento/02/index-02.html)
+#### 2. [Generar html dinámicamente con hyperscript y Fetch API](http://mi-mina.github.io/experimento/02/index-02.html)
 
 La idea es cargar un fichero json con la información de los _clips de audio_ y mostrar la carátula y su información en la página web.
 
@@ -58,7 +58,7 @@ document.body.innerHTML = renderPage(data).outerHTML
 
 #### 3. Generar html utilizando virtual dom
 
-Esto va a ser otra versión del experimento 2, pero usando [virtual-dom](https://github.com/Matt-Esch/virtual-dom). Como no tengo claro lo que estoy haciendo lo dejo así de momento. Luego tendré que redefinir mejor el punto anterior y este. 
+Esto va a ser otra versión del experimento 2, pero usando [virtual-dom](https://github.com/Matt-Esch/virtual-dom). Como no tengo claro lo que estoy haciendo lo dejo así de momento. Luego tendré que redefinir mejor el punto anterior y este.
 
 #### 4. Animaciones sin necesidad de librerías
 
