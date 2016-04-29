@@ -1,10 +1,4 @@
-
-
-
-
-
-
-module.exports = function createContainer() {
+var createContainer = function () {
   var theBody = document.getElementsByTagName("body")[0];
   var newSection = document.createElement("section");
   var newDiv = document.createElement("div");
@@ -14,5 +8,6 @@ module.exports = function createContainer() {
   newSection.appendChild(newDiv);
   newSection.setAttribute("class", "main-content");
   theBody.appendChild(newSection);
+};
 
-}
+module.exports = createContainer;
